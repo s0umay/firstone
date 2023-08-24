@@ -25,15 +25,15 @@ class FTable:
         return timing_matches
 
 def main():
-    flight_table = FTable()
+    table = FTable()
 
     # Adding matches to the table
-    flight_table.add_match(Matchs("Mumbai", "India", "Sri Lanka", "DAY"))
-    flight_table.add_match(Matchs("Delhi", "England", "Australia", "DAY-NIGHT"))
-    flight_table.add_match(Matchs("Chennai", "India", "South Africa", "DAY"))
-    flight_table.add_match(Matchs("Indore", "England", "Sri Lanka", "DAY-NIGHT"))
-    flight_table.add_match(Matchs("Mohali", "Australia", "South Africa", "DAY-NIGHT"))
-    flight_table.add_match(Matchs("Delhi", "India", "Australia", "DAY"))
+    table.add_match(Matchs("Mumbai", "India", "Sri Lanka", "DAY"))
+    table.add_match(Matchs("Delhi", "England", "Australia", "DAY-NIGHT"))
+    table.add_match(Matchs("Chennai", "India", "South Africa", "DAY"))
+    table.add_match(Matchs("Indore", "England", "Sri Lanka", "DAY-NIGHT"))
+    table.add_match(Matchs("Mohali", "Australia", "South Africa", "DAY-NIGHT"))
+    table.add_match(Matchs("Delhi", "India", "Australia", "DAY"))
 
     while True:
         print("Select search parameter:")
@@ -45,19 +45,19 @@ def main():
 
         if c == 1:
             team_name = input("Enter Team Name: ")
-            matches = flight_table.list_matches_by_team(team_name)
+            matches = table.list_matches_by_team(team_name)
             for match in matches:
                 print(f"{match.team1} vs {match.team2} at {match.location}, Timing: {match.timing}")
 
         elif c == 2:
             location_name = input("Enter Location Name: ")
-            matches = flight_table.list_matches_by_location(location_name)
+            matches = table.list_matches_by_location(location_name)
             for match in matches:
                 print(f"{match.team1} vs {match.team2} at {match.location}, Timing: {match.timing}")
 
         elif c == 3:
             timing_type = input("Enter Timing: ")
-            matches = flight_table.list_matches_by_timing(timing_type)
+            matches = table.list_matches_by_timing(timing_type)
             for match in matches:
                 print(f"{match.team1} vs {match.team2} at {match.location}, Timing: {match.timing}")
 
